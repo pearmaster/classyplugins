@@ -1,7 +1,7 @@
 
 import interfaces
 
-class MyPlugin(PluginBaseClass):
+class MyPlugin(interfaces.PluginBase):
    
    def print_message(self, msg):
        print msg

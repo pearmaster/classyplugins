@@ -1,6 +1,6 @@
 import abc
 
-class PluginBaseClass(object):
+class PluginBase(object):
     
     @abc.abstractmethod
     def print_message(self, msg):
