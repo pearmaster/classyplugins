@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
     name='classyplugins',
-    version='0.0.4',
+    version='0.0.5',
     url='http://code.google.com/p/classyplugins/',
     license='LGPL',
     description='Lightweight class-based plugin system',
