@@ -1,4 +1,7 @@
 build
 classyplugins.egg-info
 dist
-.hgignore~
+
+syntax: glob
+*~
+*.pyc
