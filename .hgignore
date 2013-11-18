@@ -1,0 +1,4 @@
+build
+classyplugins.egg-info
+dist
+.hgignore~
