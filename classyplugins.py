@@ -1,20 +1,28 @@
 
+"""
+This is simple class-based plugin system.  At its heart is the ClassyPlugin
+class which can be used to discover and use plugin classes.
+
+Copyright 2013 Jacob Brunson and licensed under Lesser GPL License.
+"""
+
 import inspect
 import glob
 import os
-import sys
 import imp
 from collections import defaultdict
 
-
 class ClassyPlugins(object):
+    """ Encapsulates a set of implementing plugin classes.
+    """
 
     def __init__(self):
         # This is the main lookup dictionary.  The keys are the base classes and
         # each value is a list of the implementing sub classes.
         self._found = defaultdict(list)
 
-    def _get_module(self, filename):
+    @staticmethod
+    def _get_module(filename):
         """ Based on the filename provided, it loads the module and returns the
         module object.  It does not currently load the module into globals
         """
@@ -63,6 +71,9 @@ class ClassyPlugins(object):
             self._inspect_module(mod)
 
     def use(self, baseclass):
+        """ Returns a list of discovered classes from plugins that implement the
+        provide baseclass/interface.
+        """
         if baseclass in self._found:
             return self._found[baseclass]
         return []
